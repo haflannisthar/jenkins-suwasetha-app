@@ -231,10 +231,10 @@
                     <h5 class="card-title fw-semibold mb-4">Quick Access</h5>
                     <div class="row">
                         <!-- patient -->
-                        <div class="col-1 text-start" th:if="${roles.contains('Manager') || roles.contains('Admin') || roles.contains('Medical Receptionist')}">
+                        <div class="col-1 text-start" id="btnPatientQuickAccess" th:if="${roles.contains('Manager') || roles.contains('Admin') || roles.contains('Medical Receptionist')}">
                             <button>
                                 <a href="/patient">
-                                    <div class="card" style="width: 5rem;">
+                                    <div class="card"  style="width: 5rem;">
                                         <img class="card-img-top" src="/resources/images/7.png" alt="Card image cap">
                                     </div>
                                 </a>

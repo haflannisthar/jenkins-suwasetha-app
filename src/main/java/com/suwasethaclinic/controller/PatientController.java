@@ -82,7 +82,7 @@ public LocalDate patientAge(@PathVariable("appid") Integer appid){
     public ModelAndView patientUI(){
         ModelAndView viewUi=new ModelAndView();
         Authentication auth= SecurityContextHolder.getContext().getAuthentication();
-
+        System.out.println("Logged user: " + auth.getName());
         Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
         Set<String> roles = authorities.stream()
                 .map(GrantedAuthority::getAuthority)
@@ -99,6 +99,7 @@ public LocalDate patientAge(@PathVariable("appid") Integer appid){
 
 
         HashMap<String,Boolean> logUserPriv=privilegeController.getPrivilegeByUserModule(auth.getName(),"Patient");
+        System.out.println("Logged user privileges: " + logUserPriv);
         if (!logUserPriv.get("select")){
             viewUi.setViewName("errorpage.html");
             return viewUi;
@@ -153,6 +154,8 @@ public LocalDate patientAge(@PathVariable("appid") Integer appid){
     public String patientDelete(@RequestBody Patient patient){
         //        authentication and authorization
         Authentication auth= SecurityContextHolder.getContext().getAuthentication();
+
+        System.out.println("Logged user: " + auth.getName());
 
 //get the privilege for given module
         HashMap<String,Boolean> logUserPriv=privilegeController.getPrivilegeByUserModule(auth.getName(),"Patient");

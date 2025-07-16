@@ -192,7 +192,7 @@ public class UserController {
     }
 
 
-  @DeleteMapping
+    @DeleteMapping
     public  String deleteUser(@RequestBody User user){
 //        authentication and authorization
       Authentication auth= SecurityContextHolder.getContext().getAuthentication();

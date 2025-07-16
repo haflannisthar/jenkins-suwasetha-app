@@ -286,7 +286,7 @@ const  printPatient=(rowOb)=>{
 }
 // function to print patient details
 const printPatientDetails=()=>{
-    const newTab=window.open()
+    const newTab = window.open('/patientprint', '_blank');
     newTab.document.write(
         '<head><title>Patient Print</title>'+
         '<link rel="stylesheet" href="../resources/bootstrap-5.3.1-dist/css/bootstrap.min.css">'+'</head>'+
@@ -295,11 +295,12 @@ const printPatientDetails=()=>{
 
 
     )
-    setTimeout(
-        function() {
-            newTab.print()
-        },1000
-    )
+    // setTimeout(
+    //     function() {
+    //         newTab.print()
+    //         newTab.close()
+    //     },10000
+    // )
 }
 
 
@@ -310,28 +311,28 @@ const  checkError=()=>{
     let errors="";
 
     // patient.title == null &&
-    if ( selectTitle.value=='' && patient.title == null ) {
+    if (  patient.title == null ) {
         errors =errors + "Please select a title<br>"
         selectTitle.classList.add('is-invalid')
     }
-    if (textFirstName.value=='' && patient.firstname == null) {
+    if ( patient.firstname == null) {
         errors =errors + "Please enter first name<br>"
         textFirstName.classList.add('is-invalid')
     }
-    if (textLastName.value=='' && patient.lastname == null) {
+    if ( patient.lastname == null) {
         errors =errors + "Please enter last name<br>"
         textLastName.classList.add('is-invalid')
     }
-    if (textDateOfBirth.value=='' && patient.dateofbirth == null) {
+    if (patient.dateofbirth == null) {
         errors =errors + "Please select date of birth<br>"
         textDateOfBirth.classList.add('is-invalid')
     }
 
-    if (selectGender.value=='' && patient.gender==null) {
+    if ( patient.gender==null) {
         errors =errors + "Please select gender<br>"
         selectGender.classList.add('is-invalid')
     }
-    if (textContactNumber.value=='' && patient.contactno==null) {
+    if (patient.contactno==null) {
         errors =errors + "Please enter mobile number<br>"
         textContactNumber.classList.add('is-invalid')
     }
