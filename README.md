@@ -32,4 +32,4 @@ It includes features like appointment scheduling, doctor availability management
 * Backend: Spring Boot, Java 17
 * Frontend: HTML, CSS, JavaScript, jQuery
 * Database: MySQL
-* Testing: Selenium, TestNG
+* Testing: Selenium, TestNG, JUnit
